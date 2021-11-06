@@ -1,0 +1,7 @@
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\bin\Debug\ConsumiendoWebService.exe.config
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\bin\Debug\ConsumiendoWebService.exe
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\bin\Debug\ConsumiendoWebService.pdb
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.csproj.AssemblyReference.cache
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.csproj.CoreCompileInputs.cache
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.exe
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.pdb

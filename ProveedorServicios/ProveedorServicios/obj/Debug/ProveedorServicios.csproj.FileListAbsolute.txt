@@ -1,3 +1,4 @@
+C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.csproj.CoreCompileInputs.cache
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\ProveedorServicios.dll.config
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\ProveedorServicios.dll
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\ProveedorServicios.pdb
@@ -52,8 +53,7 @@ C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\roslyn\VBC
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.csproj.AssemblyReference.cache
-C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.csproj.CoreCompileInputs.cache
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.csproj.CopyComplete
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.dll
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.pdb
+C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.csproj.AssemblyReference.cache
