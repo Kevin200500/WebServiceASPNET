@@ -105,6 +105,20 @@
           <s:element minOccurs="0" maxOccurs="1" name="APELLIDOS" type="s:string" />
         </s:sequence>
       </s:complexType>
+      <s:element name="EnviarXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviarXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="HelloWorldSoapIn">
@@ -149,6 +163,12 @@
   <wsdl:message name="ObtenerEmpleadoSoapOut">
     <wsdl:part name="parameters" element="tns:ObtenerEmpleadoResponse" />
   </wsdl:message>
+  <wsdl:message name="EnviarXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarXML" />
+  </wsdl:message>
+  <wsdl:message name="EnviarXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarXMLResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServiciosSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo el que saluda</wsdl:documentation>
@@ -184,6 +204,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna un lista de objetos</wsdl:documentation>
       <wsdl:input message="tns:ObtenerEmpleadoSoapIn" />
       <wsdl:output message="tns:ObtenerEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna un XML</wsdl:documentation>
+      <wsdl:input message="tns:EnviarXMLSoapIn" />
+      <wsdl:output message="tns:EnviarXMLSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiciosSoap" type="tns:ServiciosSoap">
@@ -251,6 +276,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EnviarXML">
+      <soap:operation soapAction="http://tempuri.org/EnviarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiciosSoap12" type="tns:ServiciosSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -310,6 +344,15 @@
     </wsdl:operation>
     <wsdl:operation name="ObtenerEmpleado">
       <soap12:operation soapAction="http://tempuri.org/ObtenerEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML">
+      <soap12:operation soapAction="http://tempuri.org/EnviarXML" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

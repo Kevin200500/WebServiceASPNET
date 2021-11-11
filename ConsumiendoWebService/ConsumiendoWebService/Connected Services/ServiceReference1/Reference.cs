@@ -132,6 +132,13 @@ namespace ConsumiendoWebService.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ObtenerEmpleado", ReplyAction="*")]
         System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.ObtenerEmpleadoResponse> ObtenerEmpleadoAsync(ConsumiendoWebService.ServiceReference1.ObtenerEmpleadoRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento xml del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnviarXML", ReplyAction="*")]
+        ConsumiendoWebService.ServiceReference1.EnviarXMLResponse EnviarXML(ConsumiendoWebService.ServiceReference1.EnviarXMLRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnviarXML", ReplyAction="*")]
+        System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.EnviarXMLResponse> EnviarXMLAsync(ConsumiendoWebService.ServiceReference1.EnviarXMLRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -521,6 +528,74 @@ namespace ConsumiendoWebService.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EnviarXMLRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EnviarXML", Namespace="http://tempuri.org/", Order=0)]
+        public ConsumiendoWebService.ServiceReference1.EnviarXMLRequestBody Body;
+        
+        public EnviarXMLRequest() {
+        }
+        
+        public EnviarXMLRequest(ConsumiendoWebService.ServiceReference1.EnviarXMLRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class EnviarXMLRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string xml;
+        
+        public EnviarXMLRequestBody() {
+        }
+        
+        public EnviarXMLRequestBody(string xml) {
+            this.xml = xml;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class EnviarXMLResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="EnviarXMLResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ConsumiendoWebService.ServiceReference1.EnviarXMLResponseBody Body;
+        
+        public EnviarXMLResponse() {
+        }
+        
+        public EnviarXMLResponse(ConsumiendoWebService.ServiceReference1.EnviarXMLResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class EnviarXMLResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string EnviarXMLResult;
+        
+        public EnviarXMLResponseBody() {
+        }
+        
+        public EnviarXMLResponseBody(string EnviarXMLResult) {
+            this.EnviarXMLResult = EnviarXMLResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiciosSoapChannel : ConsumiendoWebService.ServiceReference1.ServiciosSoap, System.ServiceModel.IClientChannel {
     }
@@ -698,6 +773,31 @@ namespace ConsumiendoWebService.ServiceReference1 {
             ConsumiendoWebService.ServiceReference1.ObtenerEmpleadoRequest inValue = new ConsumiendoWebService.ServiceReference1.ObtenerEmpleadoRequest();
             inValue.Body = new ConsumiendoWebService.ServiceReference1.ObtenerEmpleadoRequestBody();
             return ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).ObtenerEmpleadoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ConsumiendoWebService.ServiceReference1.EnviarXMLResponse ConsumiendoWebService.ServiceReference1.ServiciosSoap.EnviarXML(ConsumiendoWebService.ServiceReference1.EnviarXMLRequest request) {
+            return base.Channel.EnviarXML(request);
+        }
+        
+        public string EnviarXML(string xml) {
+            ConsumiendoWebService.ServiceReference1.EnviarXMLRequest inValue = new ConsumiendoWebService.ServiceReference1.EnviarXMLRequest();
+            inValue.Body = new ConsumiendoWebService.ServiceReference1.EnviarXMLRequestBody();
+            inValue.Body.xml = xml;
+            ConsumiendoWebService.ServiceReference1.EnviarXMLResponse retVal = ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).EnviarXML(inValue);
+            return retVal.Body.EnviarXMLResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.EnviarXMLResponse> ConsumiendoWebService.ServiceReference1.ServiciosSoap.EnviarXMLAsync(ConsumiendoWebService.ServiceReference1.EnviarXMLRequest request) {
+            return base.Channel.EnviarXMLAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.EnviarXMLResponse> EnviarXMLAsync(string xml) {
+            ConsumiendoWebService.ServiceReference1.EnviarXMLRequest inValue = new ConsumiendoWebService.ServiceReference1.EnviarXMLRequest();
+            inValue.Body = new ConsumiendoWebService.ServiceReference1.EnviarXMLRequestBody();
+            inValue.Body.xml = xml;
+            return ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).EnviarXMLAsync(inValue);
         }
     }
 }

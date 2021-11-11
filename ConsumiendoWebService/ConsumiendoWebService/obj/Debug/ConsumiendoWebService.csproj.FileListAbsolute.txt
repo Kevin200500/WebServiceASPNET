@@ -5,3 +5,6 @@ C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debu
 C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.csproj.CoreCompileInputs.cache
 C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.exe
 C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.pdb
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ads00\Source\repos\ConsumiendoWebService\ConsumiendoWebService\obj\Debug\ConsumiendoWebService.csproj.CopyComplete

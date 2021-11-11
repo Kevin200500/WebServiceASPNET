@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 using ProveedorServicios;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace ProveedorServicios
 {
@@ -80,5 +82,32 @@ namespace ProveedorServicios
             };
             return listEmpleados;
         }
+        [WebMethod(Description = "Metodo que retorna un XML")]
+        public string EnviarXML(string xml)
+        {
+            var data_xml = new XmlDocument();
+
+            data_xml.LoadXml(xml);
+
+            var documento = data_xml.SelectSingleNode("documento");
+            var deporte = documento["deporte"].InnerText;
+
+            Funciones.Logs("ARCHIVO_XML","Deporte: "+ deporte+"; Equipos:");
+            var node_equipos = data_xml.GetElementsByTagName("equipo");
+
+            
+            var equipos = ((XmlElement)node_equipos[0]).GetElementsByTagName("equipo");
+
+            foreach (XmlElement item in equipos)
+            {
+                var nombre = item.GetElementsByTagName("nombre")[0].InnerText;
+                var pais = item.GetElementsByTagName("pais")[0].InnerText;
+                Funciones.Logs("XML",nombre+"-"+pais);
+            }
+
+            return "OK";
+        }
+
+
     }
 }
