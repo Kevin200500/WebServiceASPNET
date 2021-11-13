@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Saludar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaludarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaludarResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardaLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mensaje" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardaLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardaLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Sumar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="n1" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="n2" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SumarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SumarResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerMeses">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerMesesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerMesesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GuardarArreglo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="arreglo" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarArregloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarArregloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ObtenerEmpleado">
+        <s:complexType />
+      </s:element>
+      <s:element name="ObtenerEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ObtenerEmpleadoResult" type="tns:ArrayOfEmpleados" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEmpleados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Empleados" nillable="true" type="tns:Empleados" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Empleados">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APELLIDOS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="EnviarXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnviarXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnviarXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarJSON">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetornarJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornarJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="json" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GuardarJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GuardarJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaludarSoapIn">
+    <wsdl:part name="parameters" element="tns:Saludar" />
+  </wsdl:message>
+  <wsdl:message name="SaludarSoapOut">
+    <wsdl:part name="parameters" element="tns:SaludarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardaLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardaLog" />
+  </wsdl:message>
+  <wsdl:message name="GuardaLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardaLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="SumarSoapIn">
+    <wsdl:part name="parameters" element="tns:Sumar" />
+  </wsdl:message>
+  <wsdl:message name="SumarSoapOut">
+    <wsdl:part name="parameters" element="tns:SumarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMesesSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerMeses" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerMesesSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerMesesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArregloSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarArreglo" />
+  </wsdl:message>
+  <wsdl:message name="GuardarArregloSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarArregloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:ObtenerEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="ObtenerEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:ObtenerEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnviarXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:EnviarXML" />
+  </wsdl:message>
+  <wsdl:message name="EnviarXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:EnviarXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornarJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarJSON" />
+  </wsdl:message>
+  <wsdl:message name="RetornarJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GuardarJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GuardarJSON" />
+  </wsdl:message>
+  <wsdl:message name="GuardarJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GuardarJSONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo el que saluda</wsdl:documentation>
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo Con parametro</wsdl:documentation>
+      <wsdl:input message="tns:SaludarSoapIn" />
+      <wsdl:output message="tns:SaludarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardaLog">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Guarda Log</wsdl:documentation>
+      <wsdl:input message="tns:GuardaLogSoapIn" />
+      <wsdl:output message="tns:GuardaLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sumar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo de suma</wsdl:documentation>
+      <wsdl:input message="tns:SumarSoapIn" />
+      <wsdl:output message="tns:SumarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMeses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna un arreglo</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerMesesSoapIn" />
+      <wsdl:output message="tns:ObtenerMesesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArreglo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que guarda un arreglo</wsdl:documentation>
+      <wsdl:input message="tns:GuardarArregloSoapIn" />
+      <wsdl:output message="tns:GuardarArregloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpleado">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna un lista de objetos</wsdl:documentation>
+      <wsdl:input message="tns:ObtenerEmpleadoSoapIn" />
+      <wsdl:output message="tns:ObtenerEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna un XML</wsdl:documentation>
+      <wsdl:input message="tns:EnviarXMLSoapIn" />
+      <wsdl:output message="tns:EnviarXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarJSON">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que retorna un json</wsdl:documentation>
+      <wsdl:input message="tns:RetornarJSONSoapIn" />
+      <wsdl:output message="tns:RetornarJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJSON">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Metodo que Guarda un json</wsdl:documentation>
+      <wsdl:input message="tns:GuardarJSONSoapIn" />
+      <wsdl:output message="tns:GuardarJSONSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosSoap" type="tns:ServiciosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <soap:operation soapAction="http://tempuri.org/Saludar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaLog">
+      <soap:operation soapAction="http://tempuri.org/GuardaLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sumar">
+      <soap:operation soapAction="http://tempuri.org/Sumar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMeses">
+      <soap:operation soapAction="http://tempuri.org/ObtenerMeses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArreglo">
+      <soap:operation soapAction="http://tempuri.org/GuardarArreglo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpleado">
+      <soap:operation soapAction="http://tempuri.org/ObtenerEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML">
+      <soap:operation soapAction="http://tempuri.org/EnviarXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarJSON">
+      <soap:operation soapAction="http://tempuri.org/RetornarJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJSON">
+      <soap:operation soapAction="http://tempuri.org/GuardarJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosSoap12" type="tns:ServiciosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <soap12:operation soapAction="http://tempuri.org/Saludar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardaLog">
+      <soap12:operation soapAction="http://tempuri.org/GuardaLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sumar">
+      <soap12:operation soapAction="http://tempuri.org/Sumar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerMeses">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerMeses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarArreglo">
+      <soap12:operation soapAction="http://tempuri.org/GuardarArreglo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/ObtenerEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML">
+      <soap12:operation soapAction="http://tempuri.org/EnviarXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarJSON">
+      <soap12:operation soapAction="http://tempuri.org/RetornarJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GuardarJSON">
+      <soap12:operation soapAction="http://tempuri.org/GuardarJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicios">
+    <wsdl:port name="ServiciosSoap" binding="tns:ServiciosSoap">
+      <soap:address location="https://localhost:44311/Servicios.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosSoap12" binding="tns:ServiciosSoap12">
+      <soap12:address location="https://localhost:44311/Servicios.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

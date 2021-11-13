@@ -139,6 +139,20 @@ namespace ConsumiendoWebService.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EnviarXML", ReplyAction="*")]
         System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.EnviarXMLResponse> EnviarXMLAsync(ConsumiendoWebService.ServiceReference1.EnviarXMLRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento RetornarJSONResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RetornarJSON", ReplyAction="*")]
+        ConsumiendoWebService.ServiceReference1.RetornarJSONResponse RetornarJSON(ConsumiendoWebService.ServiceReference1.RetornarJSONRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RetornarJSON", ReplyAction="*")]
+        System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.RetornarJSONResponse> RetornarJSONAsync(ConsumiendoWebService.ServiceReference1.RetornarJSONRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento json del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarJSON", ReplyAction="*")]
+        ConsumiendoWebService.ServiceReference1.GuardarJSONResponse GuardarJSON(ConsumiendoWebService.ServiceReference1.GuardarJSONRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GuardarJSON", ReplyAction="*")]
+        System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.GuardarJSONResponse> GuardarJSONAsync(ConsumiendoWebService.ServiceReference1.GuardarJSONRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -596,6 +610,135 @@ namespace ConsumiendoWebService.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RetornarJSONRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RetornarJSON", Namespace="http://tempuri.org/", Order=0)]
+        public ConsumiendoWebService.ServiceReference1.RetornarJSONRequestBody Body;
+        
+        public RetornarJSONRequest() {
+        }
+        
+        public RetornarJSONRequest(ConsumiendoWebService.ServiceReference1.RetornarJSONRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class RetornarJSONRequestBody {
+        
+        public RetornarJSONRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RetornarJSONResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RetornarJSONResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ConsumiendoWebService.ServiceReference1.RetornarJSONResponseBody Body;
+        
+        public RetornarJSONResponse() {
+        }
+        
+        public RetornarJSONResponse(ConsumiendoWebService.ServiceReference1.RetornarJSONResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class RetornarJSONResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string RetornarJSONResult;
+        
+        public RetornarJSONResponseBody() {
+        }
+        
+        public RetornarJSONResponseBody(string RetornarJSONResult) {
+            this.RetornarJSONResult = RetornarJSONResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarJSONRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarJSON", Namespace="http://tempuri.org/", Order=0)]
+        public ConsumiendoWebService.ServiceReference1.GuardarJSONRequestBody Body;
+        
+        public GuardarJSONRequest() {
+        }
+        
+        public GuardarJSONRequest(ConsumiendoWebService.ServiceReference1.GuardarJSONRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarJSONRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string json;
+        
+        public GuardarJSONRequestBody() {
+        }
+        
+        public GuardarJSONRequestBody(string json) {
+            this.json = json;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GuardarJSONResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GuardarJSONResponse", Namespace="http://tempuri.org/", Order=0)]
+        public ConsumiendoWebService.ServiceReference1.GuardarJSONResponseBody Body;
+        
+        public GuardarJSONResponse() {
+        }
+        
+        public GuardarJSONResponse(ConsumiendoWebService.ServiceReference1.GuardarJSONResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GuardarJSONResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GuardarJSONResult;
+        
+        public GuardarJSONResponseBody() {
+        }
+        
+        public GuardarJSONResponseBody(string GuardarJSONResult) {
+            this.GuardarJSONResult = GuardarJSONResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ServiciosSoapChannel : ConsumiendoWebService.ServiceReference1.ServiciosSoap, System.ServiceModel.IClientChannel {
     }
@@ -798,6 +941,54 @@ namespace ConsumiendoWebService.ServiceReference1 {
             inValue.Body = new ConsumiendoWebService.ServiceReference1.EnviarXMLRequestBody();
             inValue.Body.xml = xml;
             return ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).EnviarXMLAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ConsumiendoWebService.ServiceReference1.RetornarJSONResponse ConsumiendoWebService.ServiceReference1.ServiciosSoap.RetornarJSON(ConsumiendoWebService.ServiceReference1.RetornarJSONRequest request) {
+            return base.Channel.RetornarJSON(request);
+        }
+        
+        public string RetornarJSON() {
+            ConsumiendoWebService.ServiceReference1.RetornarJSONRequest inValue = new ConsumiendoWebService.ServiceReference1.RetornarJSONRequest();
+            inValue.Body = new ConsumiendoWebService.ServiceReference1.RetornarJSONRequestBody();
+            ConsumiendoWebService.ServiceReference1.RetornarJSONResponse retVal = ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).RetornarJSON(inValue);
+            return retVal.Body.RetornarJSONResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.RetornarJSONResponse> ConsumiendoWebService.ServiceReference1.ServiciosSoap.RetornarJSONAsync(ConsumiendoWebService.ServiceReference1.RetornarJSONRequest request) {
+            return base.Channel.RetornarJSONAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.RetornarJSONResponse> RetornarJSONAsync() {
+            ConsumiendoWebService.ServiceReference1.RetornarJSONRequest inValue = new ConsumiendoWebService.ServiceReference1.RetornarJSONRequest();
+            inValue.Body = new ConsumiendoWebService.ServiceReference1.RetornarJSONRequestBody();
+            return ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).RetornarJSONAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        ConsumiendoWebService.ServiceReference1.GuardarJSONResponse ConsumiendoWebService.ServiceReference1.ServiciosSoap.GuardarJSON(ConsumiendoWebService.ServiceReference1.GuardarJSONRequest request) {
+            return base.Channel.GuardarJSON(request);
+        }
+        
+        public string GuardarJSON(string json) {
+            ConsumiendoWebService.ServiceReference1.GuardarJSONRequest inValue = new ConsumiendoWebService.ServiceReference1.GuardarJSONRequest();
+            inValue.Body = new ConsumiendoWebService.ServiceReference1.GuardarJSONRequestBody();
+            inValue.Body.json = json;
+            ConsumiendoWebService.ServiceReference1.GuardarJSONResponse retVal = ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).GuardarJSON(inValue);
+            return retVal.Body.GuardarJSONResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.GuardarJSONResponse> ConsumiendoWebService.ServiceReference1.ServiciosSoap.GuardarJSONAsync(ConsumiendoWebService.ServiceReference1.GuardarJSONRequest request) {
+            return base.Channel.GuardarJSONAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<ConsumiendoWebService.ServiceReference1.GuardarJSONResponse> GuardarJSONAsync(string json) {
+            ConsumiendoWebService.ServiceReference1.GuardarJSONRequest inValue = new ConsumiendoWebService.ServiceReference1.GuardarJSONRequest();
+            inValue.Body = new ConsumiendoWebService.ServiceReference1.GuardarJSONRequestBody();
+            inValue.Body.json = json;
+            return ((ConsumiendoWebService.ServiceReference1.ServiciosSoap)(this)).GuardarJSONAsync(inValue);
         }
     }
 }

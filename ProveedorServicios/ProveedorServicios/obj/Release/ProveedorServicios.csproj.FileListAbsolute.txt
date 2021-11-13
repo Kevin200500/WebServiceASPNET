@@ -57,3 +57,5 @@ C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Release\Pr
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Release\ProveedorServicios.csproj.CopyComplete
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Release\ProveedorServicios.dll
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Release\ProveedorServicios.pdb
+C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\Newtonsoft.Json.dll
+C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\Newtonsoft.Json.xml

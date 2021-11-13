@@ -21,7 +21,7 @@ namespace ConsumiendoWebService
 
             //var resultado = clien.HelloWorld();
             //ejericio 3
-            //var res = clien.GuardaLog("esto es un mensaje para ser guardado en un txt ");
+            //var res = clien.GuardaLog("esto es un mensaje para ser guardado en un txt");
             //Console.WriteLine(res);
             //Console.WriteLine(resultado);
 
@@ -29,13 +29,13 @@ namespace ConsumiendoWebService
             //var numero1 = Convert.ToInt32(Console.ReadLine());
             //var numero2 = Convert.ToInt32(Console.ReadLine());
             //var suma = clien.Sumar(numero1, numero2);
-            //Console.WriteLine("el resultado es: "+suma);
+            //Console.WriteLine("el resultado es: " + suma);
             //var arreglo = clien.ObtenerMeses();
             //foreach (var item in arreglo)
             //{
             //    Console.WriteLine(item);
             //}
-            //var nombres =new ArrayOfString()
+            //var nombres = new ArrayOfString()
             //{
             //    "Kevin",
             //    "Evelyn",
@@ -51,35 +51,38 @@ namespace ConsumiendoWebService
             //var resEmpleado = clien.ObtenerEmpleado();
             //for (var i = 0; i < resEmpleado.Length; i++)
             //{
-            //    Console.WriteLine(resEmpleado[i].APELLIDOS + " "+resEmpleado[i].NOMBRE);
+            //    Console.WriteLine(resEmpleado[i].APELLIDOS + " " + resEmpleado[i].NOMBRE);
             //}
-            var xml = "<?xml version='1.0' encoding='UTF-8'?>" +
-                      "<documento>" +
-                      "<deporte>" +
-                      "<![CDATA[Futbol]]>" +
-                      "</deporte>" +
-                      "<equipos>" +
-                      "<equipo>" +
-                      "<nombre>" + "<![CDATA[Manchester]]></nombre>" +
-                      "<pais><![CDATA[Inglaterra]]></pais>" +
-                      "</equipo><equipo>" +
-                      "<nombre><![CDATA[Valencia]]></nombre>" +
-                      "<pais><![CDATA[España]]></pais>" +
-                      "</equipo></equipos>" +
-                      "</documento>";
-            var result = clien.EnviarXML(xml);
-            Console.WriteLine(result);
+            //var xml = "<?xml version='1.0' encoding='UTF-8'?>" +
+            //          "<documento>" +
+            //          "<deporte>" +
+            //          "<![CDATA[Futbol]]>" +
+            //          "</deporte>" +
+            //          "<equipos>" +
+            //          "<equipo>" +
+            //          "<nombre>" + "<![CDATA[Manchester]]></nombre>" +
+            //          "<pais><![CDATA[Inglaterra]]></pais>" +
+            //          "</equipo><equipo>" +
+            //          "<nombre><![CDATA[Valencia]]></nombre>" +
+            //          "<pais><![CDATA[España]]></pais>" +
+            //          "</equipo></equipos>" +
+            //          "</documento>";
+            //var result = clien.EnviarXML(xml);
 
-            //var json = new Dictionary<string, dynamic>
-            //{
-            //    {"deporte","fultbol"},
-            //};
-            //var equipos = new List<Dictionary<string, string>>
-            //{
-            //    new Dictionary<string, string> { { "nombre", "Chelse" }, { "pais", "Inglaterra" } },
-            //    new Dictionary<string, string>{{"nombre","tigres"},{"pais","nuevo leon"}}
-            //};
-            //var result = clien.GuardarJson(JsonConvert.SerializeObject((json)))
+
+            var json = new Dictionary<string, dynamic>
+            {
+                { "deporte", "futbool" }
+            };
+            //json.Add("deporte","futbol");
+            var equipos = new List<Dictionary<string, string>>
+            {
+                new Dictionary<string, string> { { "nombre", "Chelse" }, { "pais", "Inglaterra" } },
+                new Dictionary<string, string>{{"nombre","tigres"},{"pais","nuevo leon"}}
+            };
+            json.Add("equipos", equipos);
+            var result = clien.GuardarJSON(JsonConvert.SerializeObject(json));
+            Console.WriteLine(result);
             Console.ReadKey();
         }
     }

@@ -6,6 +6,7 @@ using System.Web.Services;
 using ProveedorServicios;
 using System.Xml;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace ProveedorServicios
 {
@@ -49,7 +50,7 @@ namespace ProveedorServicios
             {
                 "Enero",
                 "Febrero",
-                "Marzo"
+                "Marzo",
             };
             return meses;
         }
@@ -107,7 +108,49 @@ namespace ProveedorServicios
 
             return "OK";
         }
+        [WebMethod(Description = "Metodo que retorna un json")]
+        public string RetornarJSON()
+        {
+            var json = new Dictionary<string, dynamic>();
 
+            json.Add("equipos","Futbol");
+            var equipos = new List<Dictionary<string, string>>
+            {
+                new Dictionary<string, string>
+                {
+                    { "nombre", "America" },
+                    { "pais", "mexico" }
+                },
+                new Dictionary<string, string>
+                {
+                    { "nombre", "LA Galaxy" },
+                    { "pais", "USA" }
+                }
+            };
+            json.Add("equipos",equipos);
+            return JsonConvert.SerializeObject(json);
+        }
 
+        [WebMethod(Description = "Metodo que Guarda un json")]
+        public string GuardarJSON(string json)
+        {
+            var data = JsonConvert.DeserializeObject<DataJson>(json);
+            Funciones.Logs("JSON","Deporte: "+data.deporte+" equipos: ");
+            for (var i = 0; i < data.equipos.Count; i++)
+            {
+                Funciones.Logs("JSON", "nombre: " + data.equipos[i].nombre + " -- "+data.equipos[i].pais);
+            }
+            return "OK";
+        }
+        internal class DataJson
+        {
+            public string deporte { get; set; }
+            public List<Equipos> equipos { get; set; }
+        }
+        internal class Equipos
+        {
+            public string nombre { get; set; }
+            public string pais { get; set; }
+        }
     }
 }

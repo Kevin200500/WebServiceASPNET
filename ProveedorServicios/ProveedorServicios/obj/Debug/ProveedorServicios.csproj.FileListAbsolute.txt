@@ -57,3 +57,5 @@ C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\Prov
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.dll
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.pdb
 C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\obj\Debug\ProveedorServicios.csproj.AssemblyReference.cache
+C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\Newtonsoft.Json.dll
+C:\Users\ads00\Source\repos\ProveedorServicios\ProveedorServicios\bin\Newtonsoft.Json.xml
